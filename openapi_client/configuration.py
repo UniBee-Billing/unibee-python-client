@@ -69,7 +69,7 @@ class Configuration:
                  ) -> None:
         """Constructor
         """
-        self._base_path = "http://localhost" if host is None else host
+        self._base_path = "https://api.unibee.dev" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -359,6 +359,14 @@ class Configuration:
         :return: The Auth Settings information dict.
         """
         auth = {}
+        # Bearer token authentication
+        if self.access_token is not None:
+            auth['Authorization'] = {
+                'type': 'bearer',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):
@@ -369,8 +377,8 @@ class Configuration:
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: buildtime:202404131246 \n"\
-               "SDK Package Version: 1.0.0".\
+               "Version of the API: 2.0.0 \n"\
+               "SDK Package Version: 2.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -380,8 +388,12 @@ class Configuration:
         """
         return [
             {
-                'url': "",
-                'description': "No description provided",
+                'url': "https://api.unibee.dev",
+                'description': "UniBee Production API",
+            },
+            {
+                'url': "https://api-sandbox.unibee.top",
+                'description': "UniBee Sandbox API",
             }
         ]
 
