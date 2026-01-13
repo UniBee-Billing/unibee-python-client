@@ -1,71 +1,102 @@
-[tool.poetry]
-name = "openapi_client"
-version = "1.0.0"
-description = "OpenAPI UniBee"
-authors = ["OpenAPI Generator Community <team@openapitools.org>"]
-license = "Apache-2.0"
-readme = "README.md"
-repository = "https://github.com/UniB-e-e/unibee-python-client"
-keywords = ["OpenAPI", "OpenAPI-Generator", "OpenAPI UniBee"]
-include = ["openapi_client/py.typed"]
-
-[tool.poetry.dependencies]
-python = "^3.7"
-
-urllib3 = ">= 1.25.3"
-python-dateutil = ">=2.8.2"
-pydantic = ">=2"
-typing-extensions = ">=4.7.1"
-
-[tool.poetry.dev-dependencies]
-pytest = ">=7.2.1"
-tox = ">=3.9.0"
-flake8 = ">=4.0.0"
-types-python-dateutil = ">=2.8.19.14"
-mypy = "1.4.1"
-
-
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.pylint.'MESSAGES CONTROL']
-extension-pkg-whitelist = "pydantic"
+[project]
+name = "unibee"
+version = "1.1.0"
+description = "UniBee Python SDK - Billing API client for SaaS businesses"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.8"
+authors = [
+    {name = "UniBee", email = "support@unibee.dev"},
+]
+keywords = [
+    "unibee",
+    "billing",
+    "subscription",
+    "payment",
+    "saas",
+    "invoice",
+    "api",
+    "sdk",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+dependencies = [
+    "urllib3>=1.25.3,<3.0.0",
+    "python-dateutil>=2.5.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://unibee.dev"
+Documentation = "https://docs.unibee.dev/"
+Repository = "https://github.com/UniBee-Billing/unibee-python-client"
+"Bug Tracker" = "https://github.com/UniBee-Billing/unibee-python-client/issues"
+
+[tool.setuptools.packages.find]
+include = ["unibee*"]
+exclude = ["test*", "docs*", "openapi_client*"]
+
+[tool.setuptools.package-data]
+unibee = ["py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | openapi_client
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip = ["openapi_client"]
 
 [tool.mypy]
-files = [
-  "openapi_client",
-  #"test",  # auto-generated tests
-  "tests", # hand-written tests
-]
-# TODO: enable "strict" once all these individual checks are passing
-# strict = true
-
-# List from: https://mypy.readthedocs.io/en/stable/existing_code.html#introduce-stricter-options
+python_version = "3.8"
+warn_return_any = true
 warn_unused_configs = true
-warn_redundant_casts = true
-warn_unused_ignores = true
+exclude = ["openapi_client"]
 
-## Getting these passing should be easy
-strict_equality = true
-strict_concatenate = true
-
-## Strongly recommend enabling this one as soon as you can
-check_untyped_defs = true
-
-## These shouldn't be too much additional work, but may be tricky to
-## get passing if you use a lot of untyped libraries
-disallow_subclassing_any = true
-disallow_untyped_decorators = true
-disallow_any_generics = true
-
-### These next few are various gradations of forcing use of type annotations
-#disallow_untyped_calls = true
-#disallow_incomplete_defs = true
-#disallow_untyped_defs = true
-#
-### This one isn't too hard to get passing, but return on investment is lower
-#no_implicit_reexport = true
-#
-### This one can be tricky to get passing if you use a lot of untyped libraries
-#warn_return_any = true
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
