@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **product_name** | **str** | product name | [optional] 
 **publish_status** | **int** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
 **status** | **int** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
-**tax_percentage** | **int** | TaxPercentage 1000 &#x3D; 10% | [optional] 
+**tax_scale** | **int** | tax scale 1000 &#x3D; 10% | [optional] 
 **type** | **int** | type，1-main plan，2-addon plan | [optional] 
 
 ## Example

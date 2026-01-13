@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country_code** | **str** | CountryCode | [optional] 
-**currency** | **str** | Currency, either Currency&amp;TotalAmount or PlanId needed | [optional] 
+**currency** | **str** | Currency, either Currency&amp;Currency or PlanId needed | [optional] 
 **email** | **str** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **external_payment_id** | **str** | ExternalPaymentId should unique for payment | [optional] 
 **external_user_id** | **str** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payment_details** | [**List[UnibeeApiBeanDetailPaymentDetail]**](UnibeeApiBeanDetailPaymentDetail.md) | PaymentDetails | [optional] 
+**payment_details** | [**List[UnibeeApiMerchantPaymentPaymentDetail]**](UnibeeApiMerchantPaymentPaymentDetail.md) | PaymentDetails | [optional] 
 
 ## Example
 

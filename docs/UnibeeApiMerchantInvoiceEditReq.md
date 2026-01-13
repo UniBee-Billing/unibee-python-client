@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **invoice_id** | **str** | InvoiceId | 
 **lines** | [**List[UnibeeApiMerchantInvoiceNewInvoiceItemParam]**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **name** | **str** | Name | [optional] 
-**tax_percentage** | **int** | TaxPercentage，1000 represent 10% | [optional] 
+**tax_scale** | **int** | TaxScale，1000 represent 10% | [optional] 
 
 ## Example
 

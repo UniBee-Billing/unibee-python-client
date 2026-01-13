@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **addon_params** | [**List[UnibeeApiBeanPlanAddonParam]**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **confirm_currency** | **str** | Currency To Be Confirmed，Get From Preview | [optional] 
 **confirm_total_amount** | **int** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
-**discount_code** | **str** | DiscountCode | [optional] 
 **gateway_id** | **int** | Id | 
 **metadata** | **Dict[str, str]** | Metadata，Map | [optional] 
 **payment_method_id** | **str** | PaymentMethodId | [optional] 

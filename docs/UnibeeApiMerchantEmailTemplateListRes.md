@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email_template_list** | [**List[UnibeeApiBeanMerchantEmailTemplateSimplify]**](UnibeeApiBeanMerchantEmailTemplateSimplify.md) | EmailTemplateList | [optional] 
+**email_template_list** | [**List[UnibeeApiBeanEmailTemplateVo]**](UnibeeApiBeanEmailTemplateVo.md) | EmailTemplateList | [optional] 
 
 ## Example
 

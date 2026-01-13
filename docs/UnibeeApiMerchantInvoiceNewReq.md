@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **gateway_id** | **int** | Gateway Id | 
 **lines** | [**List[UnibeeApiMerchantInvoiceNewInvoiceItemParam]**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **name** | **str** | Name | [optional] 
-**tax_percentage** | **int** | TaxPercentage，1000 represent 10% | 
+**tax_scale** | **int** | TaxScale，1000 represent 10% | 
 **user_id** | **int** | UserId | 
 
 ## Example

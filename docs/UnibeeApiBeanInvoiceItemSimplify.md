@@ -11,11 +11,10 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **period_end** | **int** |  | [optional] 
 **period_start** | **int** |  | [optional] 
-**plan** | [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **proration** | **bool** |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **tax** | **int** |  | [optional] 
-**tax_percentage** | **int** | Tax Percentage，1000 &#x3D; 10% | [optional] 
+**tax_scale** | **int** | Tax Scale，1000 &#x3D; 10% | [optional] 
 **unit_amount_excluding_tax** | **int** |  | [optional] 
 
 ## Example

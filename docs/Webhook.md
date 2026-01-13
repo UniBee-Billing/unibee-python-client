@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**webhook_endpoint_log_list_get**](Webhook.md#webhook_endpoint_log_list_get) | **GET** /merchant/webhook/endpoint_log_list | Merchant Webhook Endpoint Log list
 [**webhook_event_list_get**](Webhook.md#webhook_event_list_get) | **GET** /merchant/webhook/event_list | Webhook Event list
 [**webhook_new_endpoint_post**](Webhook.md#webhook_new_endpoint_post) | **POST** /merchant/webhook/new_endpoint | Merchant New Webhook Endpoint
-[**webhook_resend_post**](Webhook.md#webhook_resend_post) | **POST** /merchant/webhook/resend | Merchant Resent Webhook
 [**webhook_update_endpoint_post**](Webhook.md#webhook_update_endpoint_post) | **POST** /merchant/webhook/update_endpoint | Merchant Update Webhook Endpoint
 
 
@@ -323,73 +322,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **webhook_resend_post**
-> MerchantWebhookResendPost200Response webhook_resend_post(unibee_api_merchant_webhook_resend_webhook_req)
-
-Merchant Resent Webhook
-
-### Example
-
-
-```python
-import openapi_client
-from openapi_client.models.merchant_webhook_resend_post200_response import MerchantWebhookResendPost200Response
-from openapi_client.models.unibee_api_merchant_webhook_resend_webhook_req import UnibeeApiMerchantWebhookResendWebhookReq
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.Webhook(api_client)
-    unibee_api_merchant_webhook_resend_webhook_req = openapi_client.UnibeeApiMerchantWebhookResendWebhookReq() # UnibeeApiMerchantWebhookResendWebhookReq | 
-
-    try:
-        # Merchant Resent Webhook
-        api_response = api_instance.webhook_resend_post(unibee_api_merchant_webhook_resend_webhook_req)
-        print("The response of Webhook->webhook_resend_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Webhook->webhook_resend_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibee_api_merchant_webhook_resend_webhook_req** | [**UnibeeApiMerchantWebhookResendWebhookReq**](UnibeeApiMerchantWebhookResendWebhookReq.md)|  | 
-
-### Return type
-
-[**MerchantWebhookResendPost200Response**](MerchantWebhookResendPost200Response.md)
 
 ### Authorization
 

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**plan_activate_post**](Plan.md#plan_activate_post) | **POST** /merchant/plan/activate | Activate Plan
+[**plan_activate_post**](Plan.md#plan_activate_post) | **POST** /merchant/plan/activate | Plan Sync To Gateway And Activate
 [**plan_addons_binding_post**](Plan.md#plan_addons_binding_post) | **POST** /merchant/plan/addons_binding | Plan Binding Addons
 [**plan_delete_post**](Plan.md#plan_delete_post) | **POST** /merchant/plan/delete | Delete A Plan Before Activate
-[**plan_detail_get**](Plan.md#plan_detail_get) | **GET** /merchant/plan/detail | Query Plan Detail
-[**plan_detail_post**](Plan.md#plan_detail_post) | **POST** /merchant/plan/detail | Query Plan Detail
+[**plan_detail_get**](Plan.md#plan_detail_get) | **GET** /merchant/plan/detail | Plan Detail
+[**plan_detail_post**](Plan.md#plan_detail_post) | **POST** /merchant/plan/detail | Plan Detail
 [**plan_edit_post**](Plan.md#plan_edit_post) | **POST** /merchant/plan/edit | Edit Plan
-[**plan_expire_post**](Plan.md#plan_expire_post) | **POST** /merchant/plan/expire | Expire Plan
+[**plan_expire_post**](Plan.md#plan_expire_post) | **POST** /merchant/plan/expire | Expire A Plan
 [**plan_list_get**](Plan.md#plan_list_get) | **GET** /merchant/plan/list | Plan List
 [**plan_list_post**](Plan.md#plan_list_post) | **POST** /merchant/plan/list | Plan List
 [**plan_new_post**](Plan.md#plan_new_post) | **POST** /merchant/plan/new | Create Plan
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 # **plan_activate_post**
 > MerchantAuthSsoLoginOTPPost200Response plan_activate_post(unibee_api_merchant_plan_activate_req)
 
-Activate Plan
+Plan Sync To Gateway And Activate
 
 ### Example
 
@@ -47,7 +47,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     unibee_api_merchant_plan_activate_req = openapi_client.UnibeeApiMerchantPlanActivateReq() # UnibeeApiMerchantPlanActivateReq | 
 
     try:
-        # Activate Plan
+        # Plan Sync To Gateway And Activate
         api_response = api_instance.plan_activate_post(unibee_api_merchant_plan_activate_req)
         print("The response of Plan->plan_activate_post:\n")
         pprint(api_response)
@@ -222,7 +222,7 @@ No authorization required
 # **plan_detail_get**
 > MerchantPlanDetailGet200Response plan_detail_get(plan_id)
 
-Query Plan Detail
+Plan Detail
 
 ### Example
 
@@ -247,7 +247,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     plan_id = 56 # int | PlanId
 
     try:
-        # Query Plan Detail
+        # Plan Detail
         api_response = api_instance.plan_detail_get(plan_id)
         print("The response of Plan->plan_detail_get:\n")
         pprint(api_response)
@@ -288,7 +288,7 @@ No authorization required
 # **plan_detail_post**
 > MerchantPlanDetailGet200Response plan_detail_post(unibee_api_merchant_plan_detail_req)
 
-Query Plan Detail
+Plan Detail
 
 ### Example
 
@@ -314,7 +314,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     unibee_api_merchant_plan_detail_req = openapi_client.UnibeeApiMerchantPlanDetailReq() # UnibeeApiMerchantPlanDetailReq | 
 
     try:
-        # Query Plan Detail
+        # Plan Detail
         api_response = api_instance.plan_detail_post(unibee_api_merchant_plan_detail_req)
         print("The response of Plan->plan_detail_post:\n")
         pprint(api_response)
@@ -422,7 +422,7 @@ No authorization required
 # **plan_expire_post**
 > MerchantAuthSsoLoginOTPPost200Response plan_expire_post(unibee_api_merchant_plan_expire_req)
 
-Expire Plan
+Expire A Plan
 
 ### Example
 
@@ -448,7 +448,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     unibee_api_merchant_plan_expire_req = openapi_client.UnibeeApiMerchantPlanExpireReq() # UnibeeApiMerchantPlanExpireReq | 
 
     try:
-        # Expire Plan
+        # Expire A Plan
         api_response = api_instance.plan_expire_post(unibee_api_merchant_plan_expire_req)
         print("The response of Plan->plan_expire_post:\n")
         pprint(api_response)

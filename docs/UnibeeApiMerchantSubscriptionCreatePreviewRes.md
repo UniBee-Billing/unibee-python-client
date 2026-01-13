@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **invoice** | [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **plan** | [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **quantity** | **int** |  | [optional] 
-**tax_percentage** | **int** |  | [optional] 
+**tax_scale** | **int** |  | [optional] 
 **total_amount** | **int** |  | [optional] 
 **user_id** | **int** |  | [optional] 
 **vat_country_code** | **str** |  | [optional] 

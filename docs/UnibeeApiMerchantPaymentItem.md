@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** | item description  | 
 **quantity** | **int** |  | [optional] 
 **tax** | **int** | tax &#x3D; amount - amountExcludingTax | [optional] 
-**tax_percentage** | **int** | TaxPercentage，1000 &#x3D; 10% | [optional] 
+**tax_scale** | **int** | Tax Scale，1000 &#x3D; 10% | [optional] 
 **unit_amount_excluding_tax** | **int** |  | [optional] 
 
 ## Example

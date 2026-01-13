@@ -17,8 +17,6 @@ Method | HTTP request | Description
 [**subscription_detail_post**](Subscription.md#subscription_detail_post) | **POST** /merchant/subscription/detail | Subscription Detail
 [**subscription_list_get**](Subscription.md#subscription_list_get) | **GET** /merchant/subscription/list | Subscription List
 [**subscription_list_post**](Subscription.md#subscription_list_post) | **POST** /merchant/subscription/list | Subscription List
-[**subscription_new_onetime_addon_payment_post**](Subscription.md#subscription_new_onetime_addon_payment_post) | **POST** /merchant/subscription/new_onetime_addon_payment | New Subscription Onetime Addon Payment
-[**subscription_onetime_addon_list_get**](Subscription.md#subscription_onetime_addon_list_get) | **GET** /merchant/subscription/onetime_addon_list | Merchant Subscription OnetimeAddon List
 [**subscription_renew_post**](Subscription.md#subscription_renew_post) | **POST** /merchant/subscription/renew | Renew Subscription, will create new subscription based on one provided 
 [**subscription_resume_post**](Subscription.md#subscription_resume_post) | **POST** /merchant/subscription/resume | Merchant Edit Subscription-Resume
 [**subscription_suspend_post**](Subscription.md#subscription_suspend_post) | **POST** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
@@ -426,7 +424,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subscription_config_update_get**
-> MerchantSubscriptionConfigGet200Response subscription_config_update_get(downgrade_effect_immediately=downgrade_effect_immediately, upgrade_proration=upgrade_proration, incomplete_expire_time=incomplete_expire_time, invoice_email=invoice_email, try_automatic_payment_before_period_end=try_automatic_payment_before_period_end)
+> MerchantSubscriptionConfigGet200Response subscription_config_update_get(downgrade_effect_immediately=downgrade_effect_immediately, upgrade_proration=upgrade_proration, incomplete_expire_time=incomplete_expire_time, invoice_email=invoice_email)
 
 Update Merchant Subscription Config
 
@@ -454,11 +452,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     upgrade_proration = True # bool | UpgradeProration, whether subscription update generation proration invoice or not, default yes (optional)
     incomplete_expire_time = 56 # int | IncompleteExpireTime, em.. default 1day for plan of month type (optional)
     invoice_email = True # bool | InvoiceEmail, whether to send invoice email to user, default yes (optional)
-    try_automatic_payment_before_period_end = 56 # int | TryAutomaticPaymentBeforePeriodEnd, default 30 min (optional)
 
     try:
         # Update Merchant Subscription Config
-        api_response = api_instance.subscription_config_update_get(downgrade_effect_immediately=downgrade_effect_immediately, upgrade_proration=upgrade_proration, incomplete_expire_time=incomplete_expire_time, invoice_email=invoice_email, try_automatic_payment_before_period_end=try_automatic_payment_before_period_end)
+        api_response = api_instance.subscription_config_update_get(downgrade_effect_immediately=downgrade_effect_immediately, upgrade_proration=upgrade_proration, incomplete_expire_time=incomplete_expire_time, invoice_email=invoice_email)
         print("The response of Subscription->subscription_config_update_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -476,7 +473,6 @@ Name | Type | Description  | Notes
  **upgrade_proration** | **bool**| UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
  **incomplete_expire_time** | **int**| IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
  **invoice_email** | **bool**| InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
- **try_automatic_payment_before_period_end** | **int**| TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 
 ### Return type
 
@@ -899,143 +895,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **subscription_new_onetime_addon_payment_post**
-> MerchantSubscriptionNewOnetimeAddonPaymentPost200Response subscription_new_onetime_addon_payment_post(unibee_api_merchant_subscription_onetime_addon_new_req)
-
-New Subscription Onetime Addon Payment
-
-### Example
-
-
-```python
-import openapi_client
-from openapi_client.models.merchant_subscription_new_onetime_addon_payment_post200_response import MerchantSubscriptionNewOnetimeAddonPaymentPost200Response
-from openapi_client.models.unibee_api_merchant_subscription_onetime_addon_new_req import UnibeeApiMerchantSubscriptionOnetimeAddonNewReq
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.Subscription(api_client)
-    unibee_api_merchant_subscription_onetime_addon_new_req = openapi_client.UnibeeApiMerchantSubscriptionOnetimeAddonNewReq() # UnibeeApiMerchantSubscriptionOnetimeAddonNewReq | 
-
-    try:
-        # New Subscription Onetime Addon Payment
-        api_response = api_instance.subscription_new_onetime_addon_payment_post(unibee_api_merchant_subscription_onetime_addon_new_req)
-        print("The response of Subscription->subscription_new_onetime_addon_payment_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Subscription->subscription_new_onetime_addon_payment_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibee_api_merchant_subscription_onetime_addon_new_req** | [**UnibeeApiMerchantSubscriptionOnetimeAddonNewReq**](UnibeeApiMerchantSubscriptionOnetimeAddonNewReq.md)|  | 
-
-### Return type
-
-[**MerchantSubscriptionNewOnetimeAddonPaymentPost200Response**](MerchantSubscriptionNewOnetimeAddonPaymentPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **subscription_onetime_addon_list_get**
-> MerchantSubscriptionOnetimeAddonListGet200Response subscription_onetime_addon_list_get(user_id, page=page, count=count)
-
-Merchant Subscription OnetimeAddon List
-
-### Example
-
-
-```python
-import openapi_client
-from openapi_client.models.merchant_subscription_onetime_addon_list_get200_response import MerchantSubscriptionOnetimeAddonListGet200Response
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.Subscription(api_client)
-    user_id = 56 # int | UserId
-    page = 56 # int | Page, Start With 0 (optional)
-    count = 56 # int | Count Of Page (optional)
-
-    try:
-        # Merchant Subscription OnetimeAddon List
-        api_response = api_instance.subscription_onetime_addon_list_get(user_id, page=page, count=count)
-        print("The response of Subscription->subscription_onetime_addon_list_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Subscription->subscription_onetime_addon_list_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **int**| UserId | 
- **page** | **int**| Page, Start With 0 | [optional] 
- **count** | **int**| Count Of Page | [optional] 
-
-### Return type
-
-[**MerchantSubscriptionOnetimeAddonListGet200Response**](MerchantSubscriptionOnetimeAddonListGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

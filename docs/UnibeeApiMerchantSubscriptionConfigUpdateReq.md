@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **downgrade_effect_immediately** | **bool** | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end | [optional] 
 **incomplete_expire_time** | **int** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **invoice_email** | **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
-**try_automatic_payment_before_period_end** | **int** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 **upgrade_proration** | **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
 
 ## Example

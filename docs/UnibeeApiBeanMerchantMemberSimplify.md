@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **last_name** | **str** | last name | [optional] 
 **merchant_id** | **int** | merchant id | [optional] 
 **mobile** | **str** | mobile | [optional] 
-**role** | **str** | role | [optional] 
 
 ## Example
 

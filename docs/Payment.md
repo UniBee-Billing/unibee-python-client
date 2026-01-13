@@ -8,9 +8,7 @@ Method | HTTP request | Description
 [**payment_capture_post**](Payment.md#payment_capture_post) | **POST** /merchant/payment/capture | Capture Payment
 [**payment_detail_get**](Payment.md#payment_detail_get) | **GET** /merchant/payment/detail | Query Payment Detail
 [**payment_list_get**](Payment.md#payment_list_get) | **GET** /merchant/payment/list | Query Payment List
-[**payment_method_get_get**](Payment.md#payment_method_get_get) | **GET** /merchant/payment/method_get | Query Payment Method
 [**payment_method_list_get**](Payment.md#payment_method_list_get) | **GET** /merchant/payment/method_list | Query Payment Method List
-[**payment_method_new_post**](Payment.md#payment_method_new_post) | **POST** /merchant/payment/method_new | Create New Payment Method And Attach To User
 [**payment_new_post**](Payment.md#payment_new_post) | **POST** /merchant/payment/new | New Payment
 [**payment_refund_cancel_post**](Payment.md#payment_refund_cancel_post) | **POST** /merchant/payment/refund/cancel | Cancel Payment Refund
 [**payment_refund_detail_get**](Payment.md#payment_refund_detail_get) | **GET** /merchant/payment/refund/detail | Query Payment Refund Detail
@@ -303,76 +301,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **payment_method_get_get**
-> MerchantPaymentMethodGetGet200Response payment_method_get_get(gateway_id, user_id, payment_method_id)
-
-Query Payment Method
-
-### Example
-
-
-```python
-import openapi_client
-from openapi_client.models.merchant_payment_method_get_get200_response import MerchantPaymentMethodGetGet200Response
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.Payment(api_client)
-    gateway_id = 56 # int | GatewayId
-    user_id = 56 # int | UserId
-    payment_method_id = 'payment_method_id_example' # str | PaymentMethodId
-
-    try:
-        # Query Payment Method
-        api_response = api_instance.payment_method_get_get(gateway_id, user_id, payment_method_id)
-        print("The response of Payment->payment_method_get_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Payment->payment_method_get_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gateway_id** | **int**| GatewayId | 
- **user_id** | **int**| UserId | 
- **payment_method_id** | **str**| PaymentMethodId | 
-
-### Return type
-
-[**MerchantPaymentMethodGetGet200Response**](MerchantPaymentMethodGetGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **payment_method_list_get**
 > MerchantPaymentMethodListGet200Response payment_method_list_get(gateway_id, user_id=user_id, payment_id=payment_id)
 
@@ -433,73 +361,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **payment_method_new_post**
-> MerchantPaymentMethodNewPost200Response payment_method_new_post(unibee_api_merchant_payment_method_new_req)
-
-Create New Payment Method And Attach To User
-
-### Example
-
-
-```python
-import openapi_client
-from openapi_client.models.merchant_payment_method_new_post200_response import MerchantPaymentMethodNewPost200Response
-from openapi_client.models.unibee_api_merchant_payment_method_new_req import UnibeeApiMerchantPaymentMethodNewReq
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.Payment(api_client)
-    unibee_api_merchant_payment_method_new_req = openapi_client.UnibeeApiMerchantPaymentMethodNewReq() # UnibeeApiMerchantPaymentMethodNewReq | 
-
-    try:
-        # Create New Payment Method And Attach To User
-        api_response = api_instance.payment_method_new_post(unibee_api_merchant_payment_method_new_req)
-        print("The response of Payment->payment_method_new_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Payment->payment_method_new_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibee_api_merchant_payment_method_new_req** | [**UnibeeApiMerchantPaymentMethodNewReq**](UnibeeApiMerchantPaymentMethodNewReq.md)|  | 
-
-### Return type
-
-[**MerchantPaymentMethodNewPost200Response**](MerchantPaymentMethodNewPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -5,13 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**biz_type** | **int** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
+**biz_type** | **int** | biz type from payment 1-single payment, 3-subscription | [optional] 
 **crypto_amount** | **int** | crypto_amount, cent | [optional] 
 **crypto_currency** | **str** | crypto_currency | [optional] 
 **currency** | **str** |  | [optional] 
 **day_util_due** | **int** | day util due after finish | [optional] 
-**discount_amount** | **int** |  | [optional] 
-**discount_code** | **str** |  | [optional] 
 **finish_time** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
 **invoice_id** | **str** |  | [optional] 
@@ -30,7 +28,7 @@ Name | Type | Description | Notes
 **subscription_amount** | **int** |  | [optional] 
 **subscription_amount_excluding_tax** | **int** |  | [optional] 
 **tax_amount** | **int** |  | [optional] 
-**tax_percentage** | **int** | TaxPercentage，1000 &#x3D; 10% | [optional] 
+**tax_scale** | **int** | Tax Scale，1000 &#x3D; 10% | [optional] 
 **total_amount** | **int** |  | [optional] 
 **total_amount_excluding_tax** | **int** |  | [optional] 
 

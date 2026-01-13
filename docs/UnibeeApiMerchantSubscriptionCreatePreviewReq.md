@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addon_params** | [**List[UnibeeApiBeanPlanAddonParam]**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**discount_code** | **str** | DiscountCode | [optional] 
 **gateway_id** | **int** | Id | 
 **plan_id** | **int** | PlanId | 
 **quantity** | **int** | Quantity | [optional] 
