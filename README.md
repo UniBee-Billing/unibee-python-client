@@ -21,7 +21,7 @@ A Python SDK for interacting with the [UniBee](https://unibee.dev) billing API. 
 ```bash
 pip install git+https://github.com/UniBee-Billing/unibee-python-client.git
 ```
- 
+
 ### From source
 
 ```bash
